@@ -1,0 +1,614 @@
+/* ===========================================================
+   PROYECTO JAZMÍN V2
+   Style.css
+=========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    overflow:hidden;
+    background:#070912;
+    color:white;
+
+}
+
+html{
+    -webkit-text-size-adjust:100%;
+    touch-action:manipulation;
+}
+
+button{
+    -webkit-tap-highlight-color:transparent;
+}
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/*==========================================================
+FONDO
+==========================================================*/
+
+#background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    background:linear-gradient(
+        180deg,
+        #08111f,
+        #111827,
+        #1d1038
+    );
+
+    z-index:-10;
+
+}
+
+/*==========================
+ESTRELLAS
+==========================*/
+
+#stars{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(white 2px,transparent 2px);
+
+    background-size:
+    120px 120px,
+    170px 170px,
+    250px 250px;
+
+    animation:starsMove 80s linear infinite;
+
+    opacity:.6;
+
+}
+
+@keyframes starsMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(250px);
+
+    }
+
+}
+
+/*==========================
+LUNA
+==========================*/
+
+#moon{
+
+    position:absolute;
+
+    top:70px;
+    right:80px;
+
+    font-size:70px;
+
+    filter:drop-shadow(0 0 20px #fff);
+
+    animation:moon 5s ease-in-out infinite;
+
+}
+
+@keyframes moon{
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+/*==========================================================
+PANTALLAS
+==========================================================*/
+
+.pantalla{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+}
+
+.activa{
+
+    display:flex;
+
+}
+
+/*==========================================================
+TARJETA
+==========================================================*/
+
+.card{
+
+    width:700px;
+
+    max-width:95%;
+
+    padding:45px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(12px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+    0 0 40px rgba(255,105,180,.45);
+
+    animation:fade .8s;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+CORAZÓN
+==========================================================*/
+
+.heart{
+
+    font-size:90px;
+
+    margin-bottom:25px;
+
+    animation:beat 1s infinite;
+
+}
+
+@keyframes beat{
+
+    0%{transform:scale(1);}
+    25%{transform:scale(1.15);}
+    50%{transform:scale(.95);}
+    75%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+
+}
+
+/*==========================================================
+TEXTOS
+==========================================================*/
+
+h1{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+h2{
+
+    font-size:38px;
+
+}
+
+p{
+
+    font-size:21px;
+
+    line-height:1.8;
+
+    color:#ececec;
+
+    margin-top:20px;
+
+}
+
+/*==========================================================
+BOTONES
+==========================================================*/
+
+button{
+
+    margin-top:35px;
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        90deg,
+        hotpink,
+        #b517ff
+    );
+
+    color:white;
+
+    font-size:20px;
+
+    transition:.35s;
+
+    min-height:55px;
+font-weight:bold;
+
+}
+
+button:hover{
+
+    transform:scale(1.07);
+
+    box-shadow:
+
+    0 0 25px hotpink;
+
+}
+
+/*==========================================================
+HISTORIA
+==========================================================*/
+
+.story-box{
+
+    width:800px;
+
+    max-width:90%;
+
+    text-align:center;
+
+}
+
+#storyText{
+
+    font-size:55px;
+
+    line-height:1.5;
+
+    text-shadow:
+
+    0 0 15px hotpink;
+
+}
+
+/*==========================================================
+CARTA
+==========================================================*/
+
+.letter{
+
+    width:760px;
+
+    max-width:95%;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+
+    0 0 30px hotpink;
+
+}
+
+/*==========================================================
+GALERÍA
+==========================================================*/
+
+.gallery{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.gallery img{
+
+    width:min(420px,90vw);
+
+    aspect-ratio:3/4;
+
+    object-fit:cover;
+    
+    max-width:90vw;
+
+    border-radius:20px;
+
+    box-shadow:
+
+    0 0 30px hotpink;
+
+    animation:photo 1s;
+
+}
+
+@keyframes photo{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*==========================================================
+FINAL
+==========================================================*/
+
+.final-box{
+
+    text-align:center;
+
+}
+
+.final-box h1{
+
+    font-size:80px;
+
+    color:hotpink;
+
+}
+
+.final-box h2{
+
+    margin-top:20px;
+
+    font-size:50px;
+
+}
+
+.final-box p{
+
+    font-size:24px;
+
+    margin-top:25px;
+
+}
+
+/*==========================================================
+CELULAR
+==========================================================*/
+
+@media(max-width:768px){
+
+#moon{
+
+    font-size:45px;
+
+    top:25px;
+
+    right:25px;
+
+}
+
+.card,
+.letter{
+
+    padding:30px 22px;
+
+}
+
+.heart{
+
+    font-size:65px;
+
+}
+
+h1{
+
+    font-size:34px;
+
+}
+
+h2{
+
+    font-size:28px;
+
+}
+
+p{
+
+    font-size:18px;
+
+}
+
+#storyText{
+
+    font-size:30px;
+
+}
+
+button{
+
+    width:100%;
+
+    font-size:18px;
+
+}
+
+.gallery img{
+
+    width:92vw;
+
+}
+
+.final-box h1{
+
+    font-size:46px;
+
+}
+
+.final-box h2{
+
+    font-size:34px;
+
+}
+
+.final-box p{
+
+    font-size:18px;
+
+}
+
+.final-letter{
+
+    height:78vh;
+
+    padding:20px;
+
+}
+
+#cartaLarga{
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+#btnFinal{
+
+    position:sticky;
+
+    bottom:0;
+
+    margin-top:20px;
+
+}
+
+}
+
+.final-letter{
+
+    width:95%;
+
+    max-width:900px;
+
+    height:85vh;
+
+    overflow-y:auto;
+
+    padding:30px;
+
+    text-align:left;
+
+    scroll-behavior:smooth;
+
+    scrollbar-width:thin;
+
+}
+
+.final-letter::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.final-letter::-webkit-scrollbar-thumb{
+
+    background:hotpink;
+
+    border-radius:20px;
+
+}
+
+#cartaLarga{
+
+    white-space:pre-line;
+
+    font-size:20px;
+
+    line-height:1.9;
+
+}
+
+#btnFinal{
+
+    width:100%;
+
+    margin-top:40px;
+
+}
+
+*{
+    -webkit-tap-highlight-color:transparent;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
